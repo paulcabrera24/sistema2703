@@ -1,0 +1,27 @@
+<section id="historia" class="padded">
+    <div class="container">
+        <h2>Oficinas</h2>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>cod</th>
+                    <th>Pais</th>
+                    <th>Capital</th>
+                    <th>Subregión</th>
+                    <th>Área</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let itemOficina of listaOficinas" [routerLink]="['/oficinasdetalle/'+ itemOficina.cca3]">
+
+                    <td>{{itemOficina.cca3}}</td>
+                    <td>{{itemOficina.name.common}}</td>
+                    <td>{{itemOficina.capital}}</td>
+                    <td>{{itemOficina.subregion}}</td>
+                    <td>{{itemOficina.area}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

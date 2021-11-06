@@ -1,0 +1,22 @@
+<section id="oficinas-detalle" class="padded">
+    <div class="container" *ngIf="Oficina">
+        <h2>{{Oficina.name}}</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <strong>Capital:</strong> {{Oficina.capital}}<br>
+                <strong>Subregión:</strong> {{Oficina.subregion}}<br>
+                <strong>Area:</strong> {{Oficina.area}}<br>
+                <br>
+                <h5>Otras denominaciones</h5>
+                <ul>
+                    <li *ngFor="let denominacion of Oficina.altSpellings">
+                        {{denominacion}}
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <img src="{{Oficina.flags[0]}}" alt="{{Oficina.name.common}}" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>

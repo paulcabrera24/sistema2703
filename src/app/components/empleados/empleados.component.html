@@ -1,0 +1,18 @@
+<section id="historia" class="padded">
+    <div class="container">
+        <h2>Empleados</h2>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col" *ngFor="let itemEmpleado of listaEmpleados">
+                <div class="card">
+                    <img src="https://servicios.campus.pe/fotos/{{itemEmpleado.foto}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{itemEmpleado.cargo}}</h5>
+                        <p class="card-text">{{itemEmpleado.tratamiento}} {{itemEmpleado.nombres}} {{itemEmpleado.apellidos}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

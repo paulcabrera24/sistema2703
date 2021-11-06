@@ -1,0 +1,54 @@
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#tabla" type="button" role="tab" aria-controls="home" aria-selected="true">Tabla</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#cuadricula" type="button" role="tab" aria-controls="profile" aria-selected="false">Cuadricula</button>
+    </li>
+
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="tabla" role="tabpanel" aria-labelledby="home-tab">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center">Cod</th>
+                    <th>Nombre</th>
+                    <th>Detalle</th>
+                    <th class="text-end">Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let itemProducto of listaProductos">
+                    <td class="text-center">{{itemProducto.idproducto}}</td>
+                    <td>{{itemProducto.nombre}}</td>
+                    <td>{{itemProducto.detalle}}</td>
+                    <td class="text-end">{{itemProducto.precio | number:'.2'}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="tab-pane fade" id="cuadricula" role="tabpanel" aria-labelledby="profile-tab">
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col" *ngFor="let itemProducto of listaProductos">
+                <div class="card">
+                    <img src="https://servicios.campus.pe/{{itemProducto.imagengrande}}" class="card-img-top" alt="...">
+
+                    <div class="mensaje-oferta" [class.producto-sin-oferta]="itemProducto.enoferta =='0'">
+                        Oferta
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{itemProducto.nombre}}</h5>
+                        <p class="card-text">S/.{{itemProducto.precio | number:'.2'}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 36px;
+    letter-spacing: -2px;
+}
+
+h2 {
+    font-weight: 200;
+    font-size: 32px;
+    letter-spacing: -2px;
+    text-transform: lowercase;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+#main-header {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#historia {}
+
+#noticias {}
+
+.padded {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}

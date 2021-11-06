@@ -1,0 +1,33 @@
+<section id="colaboradores" class="padded">
+    <div class="container">
+        <h2>colaboradores</h2>
+        <div class="row">
+            <div class="col-sm-8">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>cod</th>
+                            <th>Nombres</th>
+                            <th>Cargo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let itemColaborador of listaColaboradores" (click)="seleccionar(itemColaborador)" [class.table-info]="itemColaborador=== colaboradorElegido">
+
+                            <td>{{itemColaborador.id}}</td>
+                            <td>{{itemColaborador.nombres}}</td>
+                            <td>{{itemColaborador.cargo}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    <Strong>Ganador: </Strong>{{colaboradorGanador.nombres}} ({{colaboradorGanador.ciudad}})</p>
+            </div>
+            <div class="col-sm-4" *ngIf="colaboradorElegido">
+                <img src={{colaboradorElegido.foto}} alt="" class="img-fluid">
+                <h4>{{colaboradorElegido.nombres}}</h4>
+                <p>{{colaboradorElegido.cargo}} <br>{{colaboradorElegido.ciudad}}</p>
+            </div>
+        </div>
+    </div>
+</section>

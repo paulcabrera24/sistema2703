@@ -1,0 +1,33 @@
+<section id="colaboradores" class="padded">
+    <div class="container">
+        <h2>Proveedores</h2>
+        <div class="mb-3">
+            <label class="form-label">Indique empresa a buscar</label>
+            <input type="text" class="form-control" placeholder="Escriba aquí" [(ngModel)]="proveedoresFilter.nombreempresa">
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>cod</th>
+                    <th>Empresa</th>
+                    <th>Contacto</th>
+                    <th>Cargo</th>
+                    <th>Ciuda</th>
+                    <th>País</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let itemProveedor of listaProveedores | filterBy: proveedoresFilter">
+
+                    <td>{{itemProveedor.idproveedor}}</td>
+                    <td>{{itemProveedor.nombreempresa}}</td>
+                    <td>{{itemProveedor.nombrecontacto}}</td>
+                    <td>{{itemProveedor.cargocontacto}}</td>
+                    <td>{{itemProveedor.ciudad}}</td>
+                    <td>{{itemProveedor.pais}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
